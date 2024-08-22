@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { i18n } from '../../../i18n-config'
+import theme from '@/config/theme.json'
+import Header from '@/layouts/partials/Header'
+import Providers from '@/layouts/partials/Providers'
+import TwSizeIndicator from '@/layouts/helpers/TwSizeIndicator'
 import '@/styles/main.scss'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -14,16 +17,55 @@ export default function RootLayout({
   children,
   params,
 }: {
-  readonly children: React.ReactNode
-  readonly params: { lang: string }
+  children: React.ReactNode
+  params: { lang: string }
 }) {
+  const pf = theme.fonts.font_family.primary
+  const sf = theme.fonts.font_family.secondary
+
   return (
-    <html lang={params.lang}>
-      <body className={inter.className}>{children}</body>
+    <html suppressHydrationWarning={true} lang="he">
+      <head>
+        {/* responsive meta */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
+        />
+
+        {/* theme meta */}
+        <meta name="theme-name" content="nextplate" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#fff"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#000"
+        />
+
+        {/* google font css */}
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href={`https://fonts.googleapis.com/css2?family=${pf}${
+            sf ? '&family=' + sf : ''
+          }&display=swap`}
+          rel="stylesheet"
+        />
+      </head>
+      <body suppressHydrationWarning={true} className={inter.className}>
+        <TwSizeIndicator />
+        <Providers>
+          <Header lang={params.lang} links={[]} />
+          {children}
+        </Providers>
+      </body>
     </html>
   )
-}
-
-export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }))
 }

@@ -87,7 +87,7 @@ module.exports = {
   },
   plugins: [
     // require('tailwindcss-rtl'),
-    // require('@tailwindcss/typography'),
+    require('@tailwindcss/typography'),
     // require('@tailwindcss/forms'),
     // require('tailwind-bootstrap-grid')({
     //   generateContainer: false,
