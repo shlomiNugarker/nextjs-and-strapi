@@ -12,11 +12,13 @@
     "@formatjs/intl-localematcher": "^0.5.4",
     "negotiator": "^0.6.3",
     "next": "14.2.6",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.77.8"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.14",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/react": "^18",
