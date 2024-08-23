@@ -49,6 +49,8 @@ export default async function RootLayout({
   params: { lang: string }
 }) {
   const global = await getGlobal(params.lang)
+  const isRtl = params.lang === 'he'
+  const direction = isRtl ? 'rtl' : 'ltr'
 
   const pf = theme.fonts.font_family.primary
   const sf = theme.fonts.font_family.secondary
@@ -89,7 +91,11 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body suppressHydrationWarning={true} className={inter.className}>
+      <body
+        suppressHydrationWarning={true}
+        className={inter.className}
+        style={{ direction }}
+      >
         <TwSizeIndicator />
         <Providers>
           <Header
