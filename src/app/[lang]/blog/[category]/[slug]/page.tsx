@@ -1,4 +1,4 @@
-import Post from '@/layouts/cmps/post'
+import Post from '@/layouts/cmps/Post'
 import { fetchAPI } from '@/layouts/utils/fetch-api'
 import type { Metadata } from 'next'
 

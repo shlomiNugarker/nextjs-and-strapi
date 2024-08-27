@@ -1,5 +1,5 @@
 'use client'
-import BlogList from '@/layouts/cmps/blog-list'
+import BlogList from '@/layouts/cmps/Blog-list'
 import Breadcrumbs from '@/layouts/cmps/Breadcrumbs'
 import Loader from '@/layouts/cmps/Loader'
 import PageHeader from '@/layouts/partials/PageHeader'
