@@ -6,6 +6,7 @@ import Providers from '@/layouts/partials/Providers'
 import TwSizeIndicator from '@/layouts/helpers/TwSizeIndicator'
 import '@/styles/main.scss'
 import { fetchAPI } from '@/layouts/utils/fetch-api'
+import { getStrapiMedia } from '@/layouts/helpers/api-helpers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -55,6 +56,14 @@ export default async function RootLayout({
   const pf = theme.fonts.font_family.primary
   const sf = theme.fonts.font_family.secondary
 
+  const navbarLogoUrl = getStrapiMedia(
+    global.data?.attributes.navbar.navbarLogo.logoImg.data?.attributes.url
+  )
+
+  const footerLogoUrl = getStrapiMedia(
+    global.data?.attributes.footer.footerLogo.logoImg.data?.attributes.url
+  )
+
   return (
     <html suppressHydrationWarning={true} lang="he">
       <head>
@@ -99,6 +108,10 @@ export default async function RootLayout({
         <TwSizeIndicator />
         <Providers>
           <Header
+            logoText={
+              global.data?.attributes.navbar.navbarLogo.logoText as string
+            }
+            logoUrl={navbarLogoUrl}
             lang={params.lang}
             links={global.data?.attributes.navbar.links ?? []}
           />

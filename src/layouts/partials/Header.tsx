@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import ThemeSwitcher from '../cmps/ThemeSwitcher'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import Logo from '../cmps/Logo'
 
 interface NavLink {
   id: number
@@ -11,7 +12,17 @@ interface NavLink {
   text: string
 }
 
-const Header = ({ lang, links }: { lang: string; links: Array<NavLink> }) => {
+const Header = ({
+  lang,
+  links,
+  logoText,
+  logoUrl,
+}: {
+  lang: string
+  links: Array<NavLink>
+  logoText: string
+  logoUrl: string | null
+}) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
 
@@ -31,8 +42,9 @@ const Header = ({ lang, links }: { lang: string; links: Array<NavLink> }) => {
       <nav className="navbar container">
         {/* logo */}
         <div className="order-0">
-          {/* <Logo lang={lang} /> */}
-          logo
+          <Logo src={logoUrl}>
+            {logoText && <h2 className="text-2xl font-bold">{logoText}</h2>}
+          </Logo>
         </div>
 
         {/* navbar toggler */}
@@ -84,10 +96,10 @@ const Header = ({ lang, links }: { lang: string; links: Array<NavLink> }) => {
               </li>
             </React.Fragment>
           ))}
+
+          <ThemeSwitcher className="mr-5" />
         </ul>
       </nav>
-
-      <ThemeSwitcher className="mr-5" />
     </header>
   )
 }
