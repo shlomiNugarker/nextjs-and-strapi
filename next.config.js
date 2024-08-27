@@ -2,6 +2,11 @@
 
 const nextConfig = {
   images: {
+    domains: [
+      'randomuser.me',
+      'nextjs-corporate-starter-production.up.railway.app',
+    ],
+
     remotePatterns: [
       {
         protocol: 'http',
@@ -23,4 +28,4 @@ const nextConfig = {
   },
 }
 
-export default nextConfig
+module.exports = nextConfig

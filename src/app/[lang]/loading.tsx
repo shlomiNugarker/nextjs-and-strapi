@@ -1,3 +1,5 @@
+import Loader from "@/layouts/cmps/Loader";
+
 export default function Loading() {
-  return <div className="w-screen h-screen flex justify-center">טוען...</div>;
+  return <Loader />
 }
