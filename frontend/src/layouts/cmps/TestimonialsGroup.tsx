@@ -1,39 +1,40 @@
-import Image from "next/image";
-import { getStrapiMedia } from "../utils/api-helpers";
+import Image from 'next/image'
+import { getStrapiMedia } from '../utils/api-helpers'
+import ImageFallback from './ImageFallback'
 
 interface Testimonial {
-  text: string;
-  authorName: string;
+  text: string
+  authorName: string
   picture: {
     data: {
-      id: string;
+      id: string
       attributes: {
-        name: string;
-        alternativeText: string;
-        url: string;
-      };
-    };
-  };
+        name: string
+        alternativeText: string
+        url: string
+      }
+    }
+  }
 }
 
 interface TestimonialsProps {
   data: {
-    id: string;
-    title: string;
-    description: string;
-    testimonials: Testimonial[];
-  };
+    id: string
+    title: string
+    description: string
+    testimonials: Testimonial[]
+  }
 }
 
 function Testimonial({ text, authorName, picture }: Readonly<Testimonial>) {
-  const imageUrl = getStrapiMedia(picture.data?.attributes.url);
+  const imageUrl = getStrapiMedia(picture.data?.attributes.url)
   return (
     <div className="flex flex-col items-center mx-12 lg:mx-0">
       <div className="flex items-center">
         <div className="my-6">
-          <Image
-            src={imageUrl ?? ""}
-            alt={picture.data?.attributes.alternativeText || "none provided"}
+          <ImageFallback
+            src={imageUrl ?? ''}
+            alt={picture.data?.attributes.alternativeText || 'none provided'}
             className="inline-block h-32 w-32 rounded-full"
             width={200}
             height={200}
@@ -64,7 +65,7 @@ function Testimonial({ text, authorName, picture }: Readonly<Testimonial>) {
       <span className="w-12 h-1 my-2 rounded-lg dark:bg-violet-400"></span>
       <p>{authorName}</p>
     </div>
-  );
+  )
 }
 
 export default function Testimonials({ data }: TestimonialsProps) {
@@ -82,5 +83,5 @@ export default function Testimonials({ data }: TestimonialsProps) {
         ))}
       </div>
     </section>
-  );
+  )
 }

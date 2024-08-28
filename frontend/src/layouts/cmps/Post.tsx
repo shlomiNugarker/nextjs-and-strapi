@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import componentResolver from '../utils/component-resolver'
 import { formatDate, getStrapiMedia } from '../helpers/api-helpers'
+import ImageFallback from './ImageFallback'
 
 interface Article {
   id: number
@@ -45,7 +46,7 @@ export default function Post({ data }: { data: Article }) {
   return (
     <article className="space-y-8 dark:bg-black dark:text-gray-50">
       {imageUrl && (
-        <Image
+        <ImageFallback
           src={imageUrl}
           alt="article cover image"
           width={400}
@@ -58,7 +59,7 @@ export default function Post({ data }: { data: Article }) {
         <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-400">
           <div className="flex items-center md:space-x-2">
             {authorImgUrl && (
-              <Image
+              <ImageFallback
                 src={authorImgUrl}
                 alt="article cover image"
                 width={400}

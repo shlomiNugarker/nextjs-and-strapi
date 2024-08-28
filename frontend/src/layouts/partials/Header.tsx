@@ -40,7 +40,7 @@ const Header = ({
   return (
     <header className={`header z-30 ${'sticky top-0'}`}>
       {/* Navbar */}
-      <nav className="navbar container">
+      <nav className="navbar container py-3">
         {/* logo */}
         <div className="order-0">
           <Logo src={logoUrl}>

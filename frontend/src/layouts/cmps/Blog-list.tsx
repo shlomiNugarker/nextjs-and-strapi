@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { formatDate, getStrapiMedia } from '../helpers/api-helpers'
+import ImageFallback from './ImageFallback'
 
 interface Article {
   id: number
@@ -73,7 +74,7 @@ export default function BlogList({
                 className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[300px] xl:min-w-[375px] rounded-2xl overflow-hidden shadow-lg"
               >
                 {imageUrl && (
-                  <Image
+                  <ImageFallback
                     alt="presentation"
                     width="240"
                     height="240"
@@ -83,7 +84,7 @@ export default function BlogList({
                 )}
                 <div className="p-6 space-y-2 relative">
                   {avatarUrl && (
-                    <Image
+                    <ImageFallback
                       alt="avatar"
                       width="80"
                       height="80"

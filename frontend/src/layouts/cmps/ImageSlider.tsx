@@ -2,6 +2,7 @@
 import { Fade } from 'react-slideshow-image'
 import Image from 'next/image'
 import { getStrapiMedia } from '../helpers/api-helpers'
+import ImageFallback from './ImageFallback'
 
 interface Image {
   id: number
@@ -27,7 +28,7 @@ export default function Slideshow({ data }: { data: SlidShowProps }) {
           return (
             <div key={index}>
               {imageUrl && (
-                <Image
+                <ImageFallback
                   className="w-full h-96 object-cover rounded-lg"
                   height={400}
                   width={600}
