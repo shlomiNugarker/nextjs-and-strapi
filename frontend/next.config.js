@@ -15,6 +15,10 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'nextjs-corporate-starter-production.up.railway.app',
         port: '', // Leave empty if there's no specific port
         pathname: '/uploads/**', // Adjust the pathname according to your needs
