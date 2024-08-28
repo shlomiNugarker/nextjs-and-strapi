@@ -71,7 +71,10 @@ export default function Hero({ data }: HeroProps) {
                 className="mx-auto"
                 width="400"
                 height="220"
-                alt={data.picture.data.attributes.alternativeText}
+                alt={
+                  data.picture.data.attributes.alternativeText ||
+                  'Alternative Text'
+                }
                 priority
               />
             </div>

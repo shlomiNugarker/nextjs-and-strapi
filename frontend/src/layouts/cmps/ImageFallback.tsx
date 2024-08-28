@@ -8,8 +8,6 @@ const ImageFallback = (props: any) => {
   const { src, fallback = '/images/image-placeholder.png', ...rest } = props
   const [imgSrc, setImgSrc] = useState(src)
 
-  console.log({ imgSrc })
-
   useEffect(() => {
     setImgSrc(src)
   }, [src])
