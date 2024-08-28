@@ -4,6 +4,7 @@ import HighlightedText from './HighlightedText'
 import { getStrapiMedia } from '../utils/api-helpers'
 import { renderButtonStyle } from '../utils/render-button-style'
 import ImageFallback from './ImageFallback'
+import { markdownify } from '../utils/textConverter'
 
 interface Button {
   id: string
@@ -38,46 +39,43 @@ export default function Hero({ data }: HeroProps) {
   const imgUrl = getStrapiMedia(data.picture.data.attributes.url)
 
   return (
-    <section className="dark:bg-black dark:text-gray-100">
-      <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-        <div className="flex flex-col justify-center p-6 text-center rounded-lg lg:max-w-md xl:max-w-lg lg:text-left">
-          <HighlightedText
-            text={data.title}
-            tag="h1"
-            className="text-5xl font-bold leading-none sm:text-6xl mb-8"
-            color="dark:text-violet-400"
-          />
-
-          <HighlightedText
-            text={data.description}
-            tag="p"
-            className="tmt-6 mb-8 text-lg sm:mb-12"
-            color="dark:text-violet-400"
-          />
-          <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-            {data.buttons.map((button: Button, index: number) => (
+    <section className="section pt-14">
+      <div className="container">
+        <div className="row justify-center">
+          <div className="lg:col-7 md:col-9 mb-8 text-center">
+            <h1
+              className="mb-4 text-h3 lg:text-h1 slide-in-left"
+              dangerouslySetInnerHTML={markdownify(data.title)}
+            />
+            <p
+              className="mb-8 slide-in-right"
+              dangerouslySetInnerHTML={markdownify(data.description ?? '')}
+            />
+            {/* {banner.button!.enable && (
               <Link
-                key={index}
-                href={button.url}
-                target={button.newTab ? '_blank' : '_self'}
-                className={renderButtonStyle(button.type)}
+                className="btn btn-primary slide-in-left"
+                href={banner.button!.link}
+                target={
+                  banner.button!.link.startsWith('http') ? '_blank' : '_self'
+                }
+                rel="noopener"
               >
-                {button.text}
+                {banner.button!.label}
               </Link>
-            ))}
+            )} */}
           </div>
-        </div>
-        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-          <ImageFallback
-            src={imgUrl || ''}
-            alt={
-              data.picture.data.attributes.alternativeText || 'none provided'
-            }
-            className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 "
-            width={600}
-            height={600}
-            priority
-          />
+          {data.picture.data.attributes.url && (
+            <div className="col-12 slide-in-right">
+              <ImageFallback
+                src={data.picture.data.attributes.url}
+                className="mx-auto"
+                width="400"
+                height="220"
+                alt={data.picture.data.attributes.alternativeText}
+                priority
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>

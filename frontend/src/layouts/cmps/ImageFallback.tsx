@@ -1,26 +1,28 @@
 /* eslint-disable jsx-a11y/alt-text */
-"use client";
+'use client'
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 const ImageFallback = (props: any) => {
-  const { src, fallback, ...rest } = props;
-  const [imgSrc, setImgSrc] = useState(src);
+  const { src, fallback = '/images/image-placeholder.png', ...rest } = props
+  const [imgSrc, setImgSrc] = useState(src)
+
+  console.log({ imgSrc })
 
   useEffect(() => {
-    setImgSrc(src);
-  }, [src]);
+    setImgSrc(src)
+  }, [src])
 
   return (
     <Image
-      src={imgSrc}
+      src={imgSrc || fallback}
       onError={() => {
-        setImgSrc(fallback);
+        setImgSrc(fallback)
       }}
       {...rest}
     />
-  );
-};
+  )
+}
 
-export default ImageFallback;
+export default ImageFallback
