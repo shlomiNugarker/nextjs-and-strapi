@@ -44,7 +44,7 @@ export default function Post({ data }: { data: Article }) {
   )
 
   return (
-    <article className="space-y-8 dark:bg-black dark:text-gray-50">
+    <article className="space-y-8">
       {imageUrl && (
         <ImageFallback
           src={imageUrl}
