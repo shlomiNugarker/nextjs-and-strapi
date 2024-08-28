@@ -76,20 +76,6 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
-export interface MetaMetadata extends Schema.Component {
-  collectionName: 'components_meta_metadata';
-  info: {
-    name: 'Metadata';
-    displayName: 'Metadata';
-    icon: 'robot';
-    description: '';
-  };
-  attributes: {
-    metaTitle: Attribute.String & Attribute.Required;
-    metaDescription: Attribute.Text & Attribute.Required;
-  };
-}
-
 export interface SectionsTestimonialsGroup extends Schema.Component {
   collectionName: 'components_slices_testimonials_groups';
   info: {
@@ -226,6 +212,24 @@ export interface SectionsFeatureColumnsGroup extends Schema.Component {
   };
 }
 
+export interface SectionsCallToAction extends Schema.Component {
+  collectionName: 'components_sections_call_to_actions';
+  info: {
+    displayName: 'Call to action';
+    description: '';
+  };
+  attributes: {
+    enable: Attribute.Boolean;
+    title: Attribute.String;
+    picture: Attribute.Media<'images'> & Attribute.Required;
+    description: Attribute.Text;
+    buttonEnable: Attribute.Boolean;
+    buttonLabel: Attribute.String;
+    buttonLink: Attribute.String;
+    content: Attribute.Blocks;
+  };
+}
+
 export interface SectionsBottomActions extends Schema.Component {
   collectionName: 'components_slices_bottom_actions';
   info: {
@@ -238,6 +242,20 @@ export interface SectionsBottomActions extends Schema.Component {
     title: Attribute.String;
     buttons: Attribute.Component<'links.button-link', true>;
     description: Attribute.Text;
+  };
+}
+
+export interface MetaMetadata extends Schema.Component {
+  collectionName: 'components_meta_metadata';
+  info: {
+    name: 'Metadata';
+    displayName: 'Metadata';
+    icon: 'robot';
+    description: '';
+  };
+  attributes: {
+    metaTitle: Attribute.String & Attribute.Required;
+    metaDescription: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -484,7 +502,6 @@ declare module '@strapi/types' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
-      'meta.metadata': MetaMetadata;
       'sections.testimonials-group': SectionsTestimonialsGroup;
       'sections.rich-text': SectionsRichText;
       'sections.pricing': SectionsPricing;
@@ -495,7 +512,9 @@ declare module '@strapi/types' {
       'sections.features': SectionsFeatures;
       'sections.feature-rows-group': SectionsFeatureRowsGroup;
       'sections.feature-columns-group': SectionsFeatureColumnsGroup;
+      'sections.call-to-action': SectionsCallToAction;
       'sections.bottom-actions': SectionsBottomActions;
+      'meta.metadata': MetaMetadata;
       'links.social-link': LinksSocialLink;
       'links.link': LinksLink;
       'links.button': LinksButton;

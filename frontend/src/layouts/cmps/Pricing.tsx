@@ -1,38 +1,36 @@
 interface Feature {
-  id: string;
+  id: string
   attributes: {
-    name: string;
-  };
+    name: string
+  }
 }
 
 interface Plan {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  pricePeriod: string;
-  isRecommended: boolean;
+  id: string
+  name: string
+  description: string
+  price: number
+  pricePeriod: string
+  isRecommended: boolean
   product_features: {
-    data: Feature[];
-  };
+    data: Feature[]
+  }
 }
 
 interface PriceProps {
   data: {
-    id: string;
-    title: string;
-    plans: Plan[];
-  };
+    id: string
+    title: string
+    plans: Plan[]
+  }
 }
 
 export default function Pricing({ data }: PriceProps) {
   return (
-    <section className="py-20 dark:bg-black dark:text-gray-100 m:py-12 lg:py-24">
+    <section className="py-20  m:py-12 lg:py-24">
       <div className="container px-4 mx-auto ">
         <div className="max-w-2xl mx-auto mb-16 text-center">
-          <span className="font-bold tracking-wider uppercase dark:text-violet-400">
-            Pricing
-          </span>
+          <span className="font-bold tracking-wider uppercase ">Pricing</span>
           <h2 className="text-4xl font-bold lg:text-5xl">{data.title}</h2>
         </div>
         <div className="flex flex-wrap items-stretch max-w-5xl mx-auto">
@@ -43,7 +41,7 @@ export default function Pricing({ data }: PriceProps) {
             >
               <div
                 className={`flex flex-col p-6 space-y-6 rounded shadow sm:p-8 min-h-[475px] min-w-[300px] ${
-                  plan.isRecommended ? "dark:bg-violet-600" : "dark:bg-gray-800"
+                  plan.isRecommended ? 'dark:bg-violet-600' : 'dark:bg-gray-800'
                 }`}
               >
                 <div className="space-y-2">
@@ -53,8 +51,8 @@ export default function Pricing({ data }: PriceProps) {
                     <span
                       className={`ml-1 text-sm tracking-wid ${
                         plan.isRecommended
-                          ? "dark:text-gray-900"
-                          : "dark:text-violet-500"
+                          ? 'dark:text-gray-900'
+                          : 'dark:text-violet-500'
                       }`}
                     >
                       {plan.pricePeriod.toLowerCase()}
@@ -64,8 +62,8 @@ export default function Pricing({ data }: PriceProps) {
                 <p
                   className={`mt-3 leading-relaxed text-lg font-bold ${
                     plan.isRecommended
-                      ? "dark:text-gray-900"
-                      : "dark:text-gray-400"
+                      ? 'dark:text-gray-900'
+                      : 'dark:text-gray-400'
                   }`}
                 >
                   {plan.description}
@@ -73,8 +71,8 @@ export default function Pricing({ data }: PriceProps) {
                 <ul
                   className={`flex-1 mb-6 ${
                     plan.isRecommended
-                      ? "dark:text-gray-900 font-semibold"
-                      : "dark:text-gray-400"
+                      ? 'dark:text-gray-900 font-semibold'
+                      : 'dark:text-gray-400'
                   }`}
                 >
                   {plan.product_features.data.map((feature: Feature) => (
@@ -85,8 +83,8 @@ export default function Pricing({ data }: PriceProps) {
                         fill="currentColor"
                         className={`flex-shrink-0 w-6 h-6 ${
                           plan.isRecommended
-                            ? "dark:text-gray-900"
-                            : "dark:text-gray-400"
+                            ? 'dark:text-gray-900'
+                            : 'dark:text-gray-400'
                         }`}
                       >
                         <path
@@ -103,8 +101,8 @@ export default function Pricing({ data }: PriceProps) {
                   type="button"
                   className={`inline-block px-5 py-3 font-semibold tracking-wider text-center rounded   ${
                     plan.isRecommended
-                      ? "dark:bg-gray-900 dark:text-violet-400"
-                      : "dark:bg-violet-400 dark:text-gray-900"
+                      ? 'dark:bg-gray-900 dark:text-violet-400'
+                      : 'dark:bg-violet-400 dark:text-gray-900'
                   }`}
                 >
                   Get Started
@@ -115,5 +113,5 @@ export default function Pricing({ data }: PriceProps) {
         </div>
       </div>
     </section>
-  );
+  )
 }

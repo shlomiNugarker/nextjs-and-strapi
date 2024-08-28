@@ -64,10 +64,10 @@ export default function Hero({ data }: HeroProps) {
               </Link>
             )} */}
           </div>
-          {data.picture.data.attributes.url && (
+          {imgUrl && (
             <div className="col-12 slide-in-right">
               <ImageFallback
-                src={data.picture.data.attributes.url}
+                src={imgUrl}
                 className="mx-auto"
                 width="400"
                 height="220"

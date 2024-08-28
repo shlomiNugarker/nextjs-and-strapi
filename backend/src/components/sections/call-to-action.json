@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_sections_call_to_actions",
+  "info": {
+    "displayName": "Call to action",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "enable": {
+      "type": "boolean"
+    },
+    "title": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "buttonEnable": {
+      "type": "boolean"
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonLink": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    }
+  }
+}
