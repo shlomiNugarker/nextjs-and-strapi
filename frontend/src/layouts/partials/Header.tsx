@@ -4,6 +4,7 @@ import ThemeSwitcher from '../cmps/ThemeSwitcher'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Logo from '../cmps/Logo'
+import ScrollProgressBar from '../cmps/ScrollProgressBar'
 
 interface NavLink {
   id: number
@@ -72,7 +73,6 @@ const Header = ({
             ></polygon>
           </svg>
         </button>
-        {/* /navbar toggler */}
 
         <ul
           style={{ direction: isRtl ? 'rtl' : 'ltr' }}
@@ -96,10 +96,10 @@ const Header = ({
               </li>
             </React.Fragment>
           ))}
-
-          <ThemeSwitcher className="mr-5" />
+          <ThemeSwitcher className="" />
         </ul>
       </nav>
+      <ScrollProgressBar />
     </header>
   )
 }

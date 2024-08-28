@@ -8,7 +8,9 @@ const ThemeSwitcher = ({ className }: { className: string }) => {
   const { theme, setTheme, resolvedTheme } = useTheme()
   useEffect(() => setMounted(true), [])
   return (
-    <div className={`theme-switcher ${className}`}>
+    <div
+      className={`theme-switcher ${className} flex items-center justify-center`}
+    >
       <input
         id="theme-switcher"
         type="checkbox"
