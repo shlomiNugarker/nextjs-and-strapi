@@ -18,8 +18,8 @@ const nextConfig = {
         hostname: 'res.cloudinary.com',
       },
       {
-        protocol: 'https',
-        hostname: 'plus.unsplash.com',
+        protocol: 'http',
+        hostname: 'strapi',
       },
       {
         protocol: 'https',
