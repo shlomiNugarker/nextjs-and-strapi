@@ -1,0 +1,401 @@
+{
+  "version": 2,
+  "data": {
+    "api::product-feature.product-feature": {
+      "1": {
+        "id": 1,
+        "name": "fddffgf",
+        "createdAt": "2024-08-22T10:51:41.154Z",
+        "updatedAt": "2024-08-22T10:51:41.154Z",
+        "publishedAt": null,
+        "createdBy": 1,
+        "updatedBy": 1
+      }
+    },
+    "api::page.page": {
+      "1": {
+        "id": 1,
+        "shortName": "home",
+        "slug": "home",
+        "heading": "Home Page",
+        "description": "description of home page",
+        "createdAt": "2024-08-22T10:51:20.503Z",
+        "updatedAt": "2024-08-28T19:33:31.081Z",
+        "publishedAt": "2024-08-22T14:28:40.897Z",
+        "locale": "en",
+        "contentSections": [
+          {
+            "__component": "sections.hero",
+            "id": 1
+          },
+          {
+            "__component": "sections.testimonials-group",
+            "id": 1
+          },
+          {
+            "__component": "sections.pricing",
+            "id": 1
+          },
+          {
+            "__component": "sections.rich-text",
+            "id": 1
+          },
+          {
+            "__component": "sections.call-to-action",
+            "id": 1
+          }
+        ],
+        "seo": 1,
+        "localizations": [],
+        "createdBy": null,
+        "updatedBy": null
+      }
+    },
+    "sections.call-to-action": {
+      "1": {
+        "id": 1,
+        "enable": true,
+        "title": "רוצים עוד מידע?",
+        "description": "      מוזמנים ליצור איתי קשר לצורך קביעת פגישת ייעוץ ראשונית ללא התחייבות. אני כאן כדי להקשיב, לייעץ ולתמוך בכם בכל שלב בתהליך.,\n",
+        "buttonEnable": true,
+        "buttonLabel": "ישראל, חור אליי ",
+        "buttonLink": "https://wa.me/+972529526762?text=שלום",
+        "content": null,
+        "picture": 18
+      }
+    },
+    "sections.heading": {},
+    "sections.features": {},
+    "sections.lead-form": {},
+    "sections.pricing": {
+      "1": {
+        "id": 1,
+        "title": "Pricing",
+        "plans": [1]
+      }
+    },
+    "sections.rich-text": {
+      "1": {
+        "id": 1,
+        "content": "# Introduction to Programming: The Foundation of the Digital World\n\nProgramming is the art of creating instructions for computers to perform specific tasks. It lies at the core of modern technology, enabling the creation of software, websites, apps, and much more. Whether you're building a simple website or developing a complex application, understanding programming is essential.\n\n## What is Programming?\n\nAt its core, programming is the process of writing code—sets of instructions that tell a computer how to perform a task. These instructions are written in programming languages, each with its syntax and rules. The goal is to translate human ideas into a form that a machine can execute.\n\n### Popular Programming Languages\n\nThere are many programming languages, each designed for different types of tasks. Here are a few popular ones:\n\n- **Python**: Known for its readability and simplicity, Python is widely used in web development, data science, and automation.\n- **JavaScript**: The language of the web, JavaScript is essential for creating interactive websites and web applications.\n- **Java**: A versatile language used in everything from mobile apps to enterprise software.\n- **C++**: A powerful language used in system software, game development, and performance-critical applications.\n- **Ruby**: Known for its elegant syntax, Ruby is often used in web development, particularly with the Ruby on Rails framework.\n\n## Why Learn Programming?\n\nLearning programming opens up a world of opportunities. Here are a few reasons why it's valuable:\n\n### 1. **Problem-Solving Skills**\n   Programming challenges you to think logically and solve complex problems. It's a skill that can be applied in many areas of life.\n\n### 2. **Career Opportunities**\n   With technology at the forefront of innovation, programming skills are in high demand across various industries.\n\n### 3. **Creative Expression**\n   Programming allows you to create anything you can imagine, from simple tools to complex systems.\n\n### 4. **Automation**\n   By learning to program, you can automate repetitive tasks, saving time and increasing efficiency.\n\n## Getting Started with Programming\n\nIf you're new to programming, here's a simple roadmap to get started:\n\n### 1. **Choose a Language**\n   Start with a beginner-friendly language like Python or JavaScript. These languages have extensive communities and resources for learning.\n\n### 2. **Learn the Basics**\n   Focus on understanding the basic concepts like variables, loops, and functions. Practice writing simple programs to reinforce your learning.\n\n### 3. **Build Projects**\n   Apply what you've learned by building small projects. This could be a simple calculator, a personal blog, or a basic game.\n\n### 4. **Join a Community**\n   Engage with other learners and experienced programmers. Online forums, coding bootcamps, and local meetups are great places to connect.\n\n### 5. **Keep Learning**\n   Programming is a vast field, and there's always more to learn. Explore different languages, frameworks, and tools as you progress.\n\n## Conclusion\n\nProgramming is a valuable skill that empowers you to build and innovate in the digital world. Whether you're pursuing a career in technology or simply looking to solve problems more effectively, programming opens up endless possibilities. Start your journey today, and discover the power of code.\n\n"
+      }
+    },
+    "sections.large-video": {},
+    "sections.testimonials-group": {
+      "1": {
+        "id": 1,
+        "title": "Testimonials title",
+        "description": "Testimonials description",
+        "testimonials": [1, 2, 3, 4]
+      }
+    },
+    "sections.feature-rows-group": {},
+    "sections.feature-columns-group": {},
+    "sections.bottom-actions": {},
+    "sections.hero": {
+      "1": {
+        "id": 1,
+        "title": "ישראל דוד",
+        "description": "      אני ישראל דוד , מאמן אישי עם ניסיון של מספר שנים בתחום. אני מתמחה בפיתוח אישי וקריירה. באמצעות שיטות עבודה מוכחות והבנה מעמיקה של צרכי הלקוח, אני מסייע/ת ללקוחות שלי להבהיר מטרות, לנהל את הזמן בצורה אפקטיבית וליצור שינוי אמיתי בחייהם.",
+        "picture": 18,
+        "buttons": []
+      }
+    },
+    "shared.seo": {
+      "1": {
+        "id": 1,
+        "metaTitle": "Meta title ",
+        "metaDescription": "Meta description",
+        "shareImage": 17
+      },
+      "2": {
+        "id": 2,
+        "metaTitle": "metaTitle",
+        "metaDescription": "metaDescription",
+        "shareImage": null
+      }
+    },
+    "plugin::upload.file": {
+      "17": {
+        "id": 17,
+        "name": "Designer (4).jpeg",
+        "alternativeText": null,
+        "caption": null,
+        "hash": "Designer_4_039fd430bb",
+        "ext": ".jpeg",
+        "mime": "image/jpeg",
+        "url": "https://res.cloudinary.com/duajg3ah1/image/upload/v1724842404/Designer_4_039fd430bb.jpg",
+        "createdAt": "2024-08-28T10:53:26.580Z",
+        "updatedAt": "2024-08-28T10:53:26.580Z",
+        "createdBy": null,
+        "updatedBy": null
+      },
+      "18": {
+        "id": 18,
+        "name": "Designer (6).jpeg",
+        "alternativeText": null,
+        "caption": null,
+        "hash": "Designer_6_ed6cdade50",
+        "ext": ".jpeg",
+        "mime": "image/jpeg",
+        "url": "https://res.cloudinary.com/duajg3ah1/image/upload/v1724848260/Designer_6_ed6cdade50.jpg",
+        "createdAt": "2024-08-28T12:31:01.980Z",
+        "updatedAt": "2024-08-28T15:42:11.705Z",
+        "createdBy": null,
+        "updatedBy": null
+      }
+    },
+    "elements.feature": {},
+    "links.button": {},
+    "elements.plan": {
+      "1": {
+        "id": 1,
+        "name": "name",
+        "description": "description",
+        "isRecommended": true,
+        "price": 100,
+        "pricePeriod": "500",
+        "product_features": [1]
+      }
+    },
+    "elements.testimonial": {
+      "1": {
+        "id": 1,
+        "text": "text",
+        "authorName": "authorName",
+        "picture": 17
+      },
+      "2": {
+        "id": 2,
+        "text": "text",
+        "authorName": "authorName",
+        "picture": 17
+      },
+      "3": {
+        "id": 3,
+        "text": "text ",
+        "authorName": "name",
+        "picture": 17
+      },
+      "4": {
+        "id": 4,
+        "text": "scdsacav dvdkd fkvn slsfk",
+        "authorName": "cavadvadv",
+        "picture": 18
+      }
+    },
+    "elements.feature-row": {},
+    "elements.feature-column": {},
+    "links.button-link": {
+      "1": {
+        "id": 1,
+        "url": "/",
+        "newTab": true,
+        "text": "Home",
+        "type": "primary"
+      }
+    },
+    "plugin::upload.folder": {},
+    "links.link": {
+      "1": {
+        "id": 1,
+        "url": "www.google.com",
+        "newTab": true,
+        "text": "google link"
+      },
+      "3": {
+        "id": 3,
+        "url": "/",
+        "newTab": true,
+        "text": "home"
+      },
+      "4": {
+        "id": 4,
+        "url": "/",
+        "newTab": true,
+        "text": "home"
+      },
+      "5": {
+        "id": 5,
+        "url": "/",
+        "newTab": false,
+        "text": "home"
+      },
+      "6": {
+        "id": 6,
+        "url": "/blog",
+        "newTab": false,
+        "text": "Blog"
+      },
+      "7": {
+        "id": 7,
+        "url": "/blog",
+        "newTab": false,
+        "text": "blog"
+      }
+    },
+    "api::lead-form-submission.lead-form-submission": {
+      "1": {
+        "id": 1,
+        "email": "shlomin1231@gmail.com",
+        "status": "seen",
+        "createdAt": "2024-08-22T10:50:09.235Z",
+        "updatedAt": "2024-08-22T10:50:09.235Z",
+        "createdBy": null,
+        "updatedBy": null
+      }
+    },
+    "api::global.global": {
+      "1": {
+        "id": 1,
+        "createdAt": "2024-08-22T10:54:01.658Z",
+        "updatedAt": "2024-08-28T18:54:40.190Z",
+        "locale": "en",
+        "metadata": 1,
+        "favicon": 17,
+        "notificationBanner": 1,
+        "navbar": 1,
+        "footer": 1,
+        "localizations": [],
+        "createdBy": null,
+        "updatedBy": null
+      }
+    },
+    "layout.footer": {
+      "1": {
+        "id": 1,
+        "footerLogo": 2,
+        "menuLinks": [3, 7],
+        "legalLinks": [4],
+        "socialLinks": [2, 3, 4, 5],
+        "categories": [1]
+      }
+    },
+    "layout.navbar": {
+      "1": {
+        "id": 1,
+        "links": [5, 6],
+        "button": 1,
+        "navbarLogo": 1
+      }
+    },
+    "elements.notification-banner": {
+      "1": {
+        "id": 1,
+        "type": "info",
+        "heading": "notificationBanner",
+        "text": "notificationBanner text",
+        "show": false,
+        "link": 1
+      }
+    },
+    "meta.metadata": {
+      "1": {
+        "id": 1,
+        "metaTitle": "add meta title here",
+        "metaDescription": "add meta description here"
+      }
+    },
+    "api::category.category": {
+      "1": {
+        "id": 1,
+        "name": "Category Name",
+        "slug": "Category-name",
+        "description": "description of category name",
+        "createdAt": "2024-08-22T10:01:31.439Z",
+        "updatedAt": "2024-08-24T03:02:01.153Z",
+        "articles": [1],
+        "createdBy": null,
+        "updatedBy": null
+      }
+    },
+    "links.social-link": {
+      "2": {
+        "id": 2,
+        "url": "https://www.youtube.com/",
+        "newTab": false,
+        "text": "YouTube",
+        "social": "YOUTUBE"
+      },
+      "3": {
+        "id": 3,
+        "url": "www.twitter.com",
+        "newTab": false,
+        "text": "Twitter",
+        "social": "TWITTER"
+      },
+      "4": {
+        "id": 4,
+        "url": "www.discord.com",
+        "newTab": false,
+        "text": "Discord",
+        "social": "DISCORD"
+      },
+      "5": {
+        "id": 5,
+        "url": "https://shlomi-nugarker-portfolio.vercel.app/",
+        "newTab": false,
+        "text": "Website",
+        "social": "WEBSITE"
+      }
+    },
+    "layout.logo": {
+      "1": {
+        "id": 1,
+        "logoText": "navbarLogo",
+        "logoImg": 17
+      },
+      "2": {
+        "id": 2,
+        "logoText": "logoText",
+        "logoImg": 17
+      }
+    },
+    "api::article.article": {
+      "1": {
+        "id": 1,
+        "title": "Hello there!",
+        "description": "Description of the article",
+        "slug": "article-title",
+        "createdAt": "2024-08-22T10:00:14.190Z",
+        "updatedAt": "2024-08-28T10:55:06.459Z",
+        "publishedAt": "2024-08-22T11:09:29.478Z",
+        "cover": 17,
+        "category": 1,
+        "blocks": [
+          {
+            "__component": "shared.rich-text",
+            "id": 1
+          }
+        ],
+        "authorsBio": 1,
+        "seo": 2,
+        "createdBy": null,
+        "updatedBy": null
+      }
+    },
+    "api::author.author": {
+      "1": {
+        "id": 1,
+        "name": "Shlomi Nugarker ",
+        "email": "shlomin1231@gmail.com",
+        "createdAt": "2024-08-22T09:58:32.214Z",
+        "updatedAt": "2024-08-28T10:55:57.506Z",
+        "avatar": 17,
+        "articles": [1],
+        "createdBy": null,
+        "updatedBy": null
+      }
+    },
+    "shared.video-embed": {},
+    "shared.slider": {},
+    "shared.rich-text": {
+      "1": {
+        "id": 1,
+        "body": "hello from rich text"
+      }
+    },
+    "shared.quote": {},
+    "shared.media": {}
+  }
+}
