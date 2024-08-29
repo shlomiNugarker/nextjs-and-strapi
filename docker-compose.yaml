@@ -1,0 +1,76 @@
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  strapi:
+    image: strapi/strapi
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    # working_dir: /opt
+    # command: sleep 1000000000
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+      JWT_SECRET: 7ATMyreWUf0TKQ6lN42EeA==
+      ADMIN_JWT_SECRET: 9b8f7e6d5c4b3a2f1e0d
+      APP_KEYS: key1,key2,key3,key4
+      NODE_ENV: production
+      API_TOKEN_SALT: tobemodified
+      TRANSFER_TOKEN_SALT: tobemodified
+
+    volumes:
+      - ./backend/config:/opt/app/config
+      - ./backend/src:/opt/app/src
+      - ./backend/package.json:/opt/package.json
+      - ./backend/yarn.lock:/opt/yarn.lock
+      - ./backend/.env:/opt/app/.env
+      - ./backend/public/uploads:/opt/app/public/uploads
+    ports:
+      - "1337:1337"
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+  nextjs:
+    image: node:20
+    container_name: nextjs
+    working_dir: /app
+    command: sh -c "yarn install && yarn dev"
+    # command: sleep 1000000000
+    environment:
+      - NEXT_PUBLIC_STRAPI_API_TOKEN=c17be35d56b6bbad1279d2a054326a4f065884a9b81b8ddf6d371f4bf264fe80f0a1762c7f29422f19e39bb50a607a32fd89d050fbca6ffb200775008bd8f2e6054e544e0c177547171e7965c0ad1832e53f8081c3c340fa15d819620de7816e8e854e62f990cb20513e64c8a175c3fa692684bc42e9925a35a3ac45399f160e
+      - NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN=c17be35d56b6bbad1279d2a054326a4f065884a9b81b8ddf6d371f4bf264fe80f0a1762c7f29422f19e39bb50a607a32fd89d050fbca6ffb200775008bd8f2e6054e544e0c177547171e7965c0ad1832e53f8081c3c340fa15d819620de7816e8e854e62f990cb20513e64c8a175c3fa692684bc42e9925a35a3ac45399f160e
+      - NEXT_PUBLIC_STRAPI_API_URL=http://strapi:1337
+
+    volumes:
+      - ./frontend:/app
+    ports:
+      - '3000:3000'
+    depends_on:
+      - strapi
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  strapi_data:
