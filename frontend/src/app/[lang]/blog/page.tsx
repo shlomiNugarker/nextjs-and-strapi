@@ -1,10 +1,13 @@
 'use client'
-import BlogList from '@/layouts/cmps/Blog-list'
+import BlogCard from '@/layouts/cmps/BlogCard'
 import Breadcrumbs from '@/layouts/cmps/Breadcrumbs'
+import ImageFallback from '@/layouts/cmps/ImageFallback'
 import Loader from '@/layouts/cmps/Loader'
+import { formatDate, getStrapiMedia } from '@/layouts/helpers/api-helpers'
 import PageHeader from '@/layouts/partials/PageHeader'
 import { fetchAPI } from '@/layouts/utils/fetch-api'
 import { Article } from '@/types/Article'
+import Link from 'next/link'
 import { useState, useCallback, useEffect } from 'react'
 
 interface Meta {
@@ -17,7 +20,7 @@ interface Meta {
 
 export default function BlogPage({ params }: { params: { lang: string } }) {
   const [meta, setMeta] = useState<Meta | undefined>()
-  const [data, setData] = useState<any>([])
+  const [articles, setArticles] = useState<any>([])
   const [isLoading, setLoading] = useState(true)
 
   const fetchData = useCallback(async (start: number, limit: number) => {
@@ -43,9 +46,9 @@ export default function BlogPage({ params }: { params: { lang: string } }) {
       const responseData = await fetchAPI(path, urlParamsObject, options)
 
       if (start === 0) {
-        setData(responseData.data)
+        setArticles(responseData.data)
       } else {
-        setData((prevData: any[]) => [...prevData, ...responseData.data])
+        setArticles((prevData: any[]) => [...prevData, ...responseData.data])
       }
 
       setMeta(responseData.meta)
@@ -72,20 +75,21 @@ export default function BlogPage({ params }: { params: { lang: string } }) {
       <PageHeader title={'add title'}>
         <Breadcrumbs lang={params.lang} />
       </PageHeader>
-      <BlogList data={data}>
-        {meta!.pagination.start + meta!.pagination.limit <
-          meta!.pagination.total && (
-          <div className="flex justify-center">
-            <button
-              type="button"
-              className="px-6 py-3 text-sm rounded-lg hover:underline dark:bg-gray-900 dark:text-gray-400"
-              onClick={loadMorePosts}
-            >
-              Load more posts...
-            </button>
+      <section className="section">
+        <div className="container">
+          <div className="row gx-5">
+            <div className="lg:col-8">
+              <div className="row flex flex-wrap ">
+                {articles.map((post: any, index: number) => (
+                  <div key={index} className="mb-14 md:col-6 w-1/3">
+                    <BlogCard data={post} lang={params.lang} />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        )}
-      </BlogList>
+        </div>
+      </section>
     </>
   )
 }
