@@ -83,8 +83,6 @@ export default function Footer({
   legalLinks: Array<FooterLink>
   socialLinks: Array<FooterLink>
 }) {
-  console.log(socialLinks)
-
   return (
     <footer className="bg-theme-light dark:bg-darkmode-theme-light">
       <div className="container">

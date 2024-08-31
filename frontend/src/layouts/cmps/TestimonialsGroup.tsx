@@ -93,7 +93,10 @@ export default function Testimonials({ data }: TestimonialsProps) {
                           width={50}
                           className="rounded-full"
                           src={item.picture.data.attributes.url}
-                          alt={item.picture.data.attributes.alternativeText}
+                          alt={
+                            item.picture.data.attributes.alternativeText ||
+                            'Testimonial image'
+                          }
                           style={{
                             objectFit: 'cover',
                             height: `${50}px`,

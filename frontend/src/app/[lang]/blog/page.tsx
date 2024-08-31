@@ -1,13 +1,9 @@
 'use client'
 import BlogCard from '@/layouts/cmps/BlogCard'
 import Breadcrumbs from '@/layouts/cmps/Breadcrumbs'
-import ImageFallback from '@/layouts/cmps/ImageFallback'
 import Loader from '@/layouts/cmps/Loader'
-import { formatDate, getStrapiMedia } from '@/layouts/helpers/api-helpers'
 import PageHeader from '@/layouts/partials/PageHeader'
 import { fetchAPI } from '@/layouts/utils/fetch-api'
-import { Article } from '@/types/Article'
-import Link from 'next/link'
 import { useState, useCallback, useEffect } from 'react'
 
 interface Meta {

@@ -193,7 +193,7 @@ const BlogCard = ({ data, lang }: { data: any; lang: string }) => {
         <ImageFallback
           className="mb-6 w-full rounded"
           src={imageUrl}
-          alt={title}
+          alt={title || ''}
           width={445}
           height={230}
         />
