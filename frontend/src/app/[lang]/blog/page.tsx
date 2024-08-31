@@ -75,7 +75,7 @@ export default function BlogPage({ params }: { params: { lang: string } }) {
         <div className="container">
           <div className="row gx-5">
             <div className="lg:col-8">
-              <div className="row flex flex-wrap ">
+              <div className="row flex justify-center flex-wrap ">
                 {articles.map((post: any, index: number) => (
                   <div key={index} className="mb-14 md:col-6 w-1/3">
                     <BlogCard data={post} lang={params.lang} />
@@ -84,6 +84,15 @@ export default function BlogPage({ params }: { params: { lang: string } }) {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="text-center">
+          <button
+            className="btn btn-outline-primary btn-sm"
+            onClick={loadMorePosts}
+          >
+            loadMorePosts
+          </button>
         </div>
       </section>
     </>

@@ -65,7 +65,10 @@ export default function Testimonials({ data }: TestimonialsProps) {
             >
               {data.testimonials.map((item, index: number) => (
                 <SwiperSlide key={index} className="h-full">
-                  <div className="rounded-lg bg-theme-light px-7 py-10 dark:bg-darkmode-theme-light h-full flex flex-col justify-between">
+                  <div
+                    className="rounded-lg bg-theme-light px-7 py-10 dark:bg-darkmode-theme-light h-full flex flex-col justify-between"
+                    style={{ minHeight: '400px' }}
+                  >
                     <div>
                       <div className="text-dark dark:text-white">
                         <svg
@@ -109,10 +112,10 @@ export default function Testimonials({ data }: TestimonialsProps) {
                           dangerouslySetInnerHTML={markdownify(item.authorName)}
                           className="h5 font-primary font-semibold"
                         />
-                        <p
+                        {/* <p
                           dangerouslySetInnerHTML={markdownify(item.text)}
                           className="text-dark dark:text-white"
-                        />
+                        /> */}
                       </div>
                     </div>
                   </div>

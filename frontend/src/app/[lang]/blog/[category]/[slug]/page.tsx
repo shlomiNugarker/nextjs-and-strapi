@@ -62,6 +62,7 @@ export default async function PostRoute({
 }) {
   const { slug } = params
   const data = await getPostBySlug(slug)
+
   if (data.data.length === 0) return <h2>no post found</h2>
   return <Post data={data.data[0]} />
 }

@@ -99,7 +99,7 @@ const Header = ({
           <ThemeSwitcher className="" />
         </ul>
       </nav>
-      <ScrollProgressBar />
+      {/* <ScrollProgressBar /> */}
     </header>
   )
 }

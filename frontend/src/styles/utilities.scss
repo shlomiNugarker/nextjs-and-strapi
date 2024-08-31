@@ -15,6 +15,10 @@
   @apply rounded-[16px];
 }
 
+.min-h-custom {
+  @apply min-h-[calc(100vh-85px)];
+}
+
 .shadow {
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
 }

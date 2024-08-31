@@ -18,7 +18,7 @@ const CallToAction = ({ data }: { data: any }) => {
                   alt={data.picture.data.attributes.alternativeText || ''}
                 />
               </div>
-              <div className="md:col-7 md:order-1">
+              <div className="md:col-7 md:order-1 m-2">
                 <h2
                   dangerouslySetInnerHTML={markdownify(data.title)}
                   className="mb-2"

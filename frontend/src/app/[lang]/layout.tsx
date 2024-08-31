@@ -131,8 +131,7 @@ export default async function RootLayout({
             lang={params.lang}
             links={global.data?.attributes.navbar.links ?? []}
           />
-
-          {children}
+          <main className="min-h-custom ">{children}</main>
 
           <Footer
             logoUrl={footerLogoUrl}

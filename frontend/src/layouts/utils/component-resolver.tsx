@@ -26,7 +26,7 @@ export default function componentResolver(
   ///////////////////////////////////////////////
 
   console.log(
-    `ComponentResolver: Category => ${category} | Component => ${componentName} | Path => ../components/${componentName}`
+    `ComponentResolver: Category => ${category} | Component => ${componentName} | Path => ../cmps/${componentName}`
   )
 
   // The path for dynamic imports cannot be fully dynamic.
