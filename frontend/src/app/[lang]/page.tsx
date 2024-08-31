@@ -16,7 +16,7 @@ export default async function Home({ params }: { params: { lang: string } }) {
     const contentSections = page.data[0].attributes.contentSections
 
     return (
-      <section className="min-h-custom ">
+      <section className="min-h-custom container">
         {contentSections.map((section: any, index: number) => {
           return componentResolver(section, index)
         })}

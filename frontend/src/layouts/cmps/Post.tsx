@@ -48,7 +48,7 @@ export default function Post({ data }: { data: Article }) {
   )
 
   return (
-    <article className="space-y-8 ">
+    <article className="space-y-8 container">
       {imageUrl && (
         <Image
           src={imageUrl}

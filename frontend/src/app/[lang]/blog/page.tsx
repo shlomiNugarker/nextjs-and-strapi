@@ -71,7 +71,7 @@ export default function BlogPage({ params }: { params: { lang: string } }) {
       <PageHeader title={'add title'}>
         <Breadcrumbs lang={params.lang} />
       </PageHeader>
-      <section className="section">
+      <section className="section container">
         <div className="container">
           <div className="row gx-5">
             <div className="lg:col-8">

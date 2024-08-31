@@ -3,5 +3,5 @@ export default function CategoriesPage({
 }: {
   params: { slug: string }
 }) {
-  return <div>CategoriesPage</div>
+  return <div className="container">CategoriesPage</div>
 }
