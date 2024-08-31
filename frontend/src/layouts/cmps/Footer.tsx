@@ -84,7 +84,7 @@ export default function Footer({
   socialLinks: Array<FooterLink>
 }) {
   return (
-    <footer className="bg-theme-light dark:bg-darkmode-theme-light container">
+    <footer className="bg-theme-light dark:bg-darkmode-theme-light ">
       <div className="container">
         <div className="row items-center py-10 flex justify-between">
           <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">

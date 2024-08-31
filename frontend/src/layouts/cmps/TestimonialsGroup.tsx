@@ -1,5 +1,4 @@
 'use client'
-import { getStrapiMedia } from '../utils/api-helpers'
 import ImageFallback from './ImageFallback'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
